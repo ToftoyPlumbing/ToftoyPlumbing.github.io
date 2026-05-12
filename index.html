@@ -723,6 +723,195 @@
       .about-photo-wrap { display: none; }
     }
 
+    /* ── PRICING ──────────────────────────────────── */
+    #pricing {
+      padding: 88px 0;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+
+    .pricing-banner {
+      background: var(--surface);
+      border: 1px solid rgba(255,96,0,0.22);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-banner::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--orange);
+    }
+
+    .pricing-banner-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .pricing-banner-headline {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .pricing-banner-sub {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 440px;
+    }
+
+    .pricing-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .pricing-point {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .pricing-point-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      background: rgba(255,96,0,0.10);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pricing-point-icon svg { width: 18px; height: 18px; color: var(--orange); }
+
+    .pricing-point h4 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 5px;
+      letter-spacing: -0.01em;
+    }
+
+    .pricing-point p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .pricing-table {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .pricing-table-head {
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pricing-table-head span:first-child {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pricing-table-head span:last-child {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pricing-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      gap: 24px;
+    }
+
+    .pricing-row:last-child { border-bottom: none; }
+
+    .pricing-row-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .pricing-row-note {
+      font-size: 0.78rem;
+      color: var(--dim);
+      margin-top: 2px;
+    }
+
+    .pricing-row-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--orange);
+      background: rgba(255,96,0,0.10);
+      border: 1px solid rgba(255,96,0,0.20);
+      padding: 5px 13px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .pricing-cta { text-align: center; }
+
+    @media (max-width: 768px) {
+      .pricing-banner { flex-direction: column; align-items: flex-start; }
+      .pricing-points { grid-template-columns: 1fr; }
+    }
+
+    /* ── MAP ───────────────────────────────────────── */
+    .map-wrap {
+      margin-top: 52px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border2);
+      height: 300px;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+      filter: grayscale(0.4) brightness(0.88);
+    }
+
     /* ── CONTACT ───────────────────────────────────── */
     #contact {
       padding: 88px 0;
@@ -1081,6 +1270,7 @@
 
       <nav class="header-nav">
         <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
         <a href="#why">Why Us</a>
         <a href="#reviews">Reviews</a>
         <a href="#about">About</a>
@@ -1265,6 +1455,112 @@
         <a href="tel:+15404083754" class="btn-outline">
           Don't see your issue? Call us — (540) 408-3754
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-title">Straightforward Pricing.<br/>Free Estimates.</h2>
+      <p class="section-sub">Every job is different — but York's commitment never changes: you'll know the price before any work starts.</p>
+
+      <div class="pricing-banner">
+        <div>
+          <div class="pricing-banner-eyebrow">Every Job Starts Here</div>
+          <div class="pricing-banner-headline">Free Estimates,<br/>Always</div>
+          <p class="pricing-banner-sub">York will assess your situation and give you a clear, honest price before touching a thing. No pressure, no commitment until you agree.</p>
+        </div>
+        <a href="tel:+15404083754" class="btn-primary" style="flex-shrink:0;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/>
+          </svg>
+          Call for a Free Estimate
+        </a>
+      </div>
+
+      <div class="pricing-points">
+        <div class="pricing-point">
+          <div class="pricing-point-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>
+          </div>
+          <div>
+            <h4>Price Before Work Starts</h4>
+            <p>You'll get a clear quote before York lifts a wrench. No surprises on the final bill — ever.</p>
+          </div>
+        </div>
+        <div class="pricing-point">
+          <div class="pricing-point-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>
+          </div>
+          <div>
+            <h4>No Hidden Fees</h4>
+            <p>What York quotes is what you pay. No inflated parts markups or mystery charges after the fact.</p>
+          </div>
+        </div>
+        <div class="pricing-point">
+          <div class="pricing-point-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>
+          </div>
+          <div>
+            <h4>Home Warranty Accepted</h4>
+            <p>York works directly with warranty companies to get claims approved — less hassle on your end.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-table">
+        <div class="pricing-table-head">
+          <span>Common Service</span>
+          <span>Pricing</span>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-row-name">Water Heater Replacement (Tank)</div>
+            <div class="pricing-row-note">Varies by tank size, brand, and existing setup — York sources quality units at fair prices</div>
+          </div>
+          <span class="pricing-row-badge">Free Estimate</span>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-row-name">Water Heater Replacement (Tankless)</div>
+            <div class="pricing-row-note">Depends on fuel type, flow rate needs, and existing plumbing configuration</div>
+          </div>
+          <span class="pricing-row-badge">Free Estimate</span>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-row-name">Sump Pump Installation</div>
+            <div class="pricing-row-note">Single or dual pump setups; home warranty claims handled directly</div>
+          </div>
+          <span class="pricing-row-badge">Free Estimate</span>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-row-name">Toilet Repair or Replacement</div>
+            <div class="pricing-row-note">Diagnosed on-site; York explains what's needed before any work begins</div>
+          </div>
+          <span class="pricing-row-badge">Free Estimate</span>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-row-name">Drain Cleaning</div>
+            <div class="pricing-row-note">Kitchen, bathroom, or basement — straightforward pricing based on scope</div>
+          </div>
+          <span class="pricing-row-badge">Free Estimate</span>
+        </div>
+        <div class="pricing-row">
+          <div>
+            <div class="pricing-row-name">Leak Detection & Pipe Repair</div>
+            <div class="pricing-row-note">Honest assessment of location and scope — no upselling</div>
+          </div>
+          <span class="pricing-row-badge">Free Estimate</span>
+        </div>
+      </div>
+
+      <div class="pricing-cta">
+        <a href="#contact" class="btn-outline">Request a Free Estimate Online →</a>
       </div>
     </div>
   </section>
@@ -1591,6 +1887,16 @@
             ✓ Thanks! York will be in touch shortly. For urgent issues, call <a href="tel:+15404083754" style="color: inherit;">(540) 408-3754</a>.
           </div>
         </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Toftoy+Plumbing+LLC+Fredericksburg+VA&output=embed&z=13"
+          title="Toftoy Plumbing LLC — Fredericksburg, VA"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   </section>
