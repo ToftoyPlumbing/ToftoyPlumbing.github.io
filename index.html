@@ -630,26 +630,17 @@
       align-items: center;
     }
 
-    .about-img-placeholder {
+    .about-photo-wrap {
       aspect-ratio: 3/4;
       max-height: 460px;
       border-radius: var(--radius-lg);
-      background: var(--surface);
       border: 1px solid var(--border2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: var(--dim);
-      font-size: 0.85rem;
-      text-align: center;
-      padding: 24px;
-      position: relative;
       overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
     }
 
-    .about-img-placeholder::after {
+    .about-photo-wrap::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -659,7 +650,47 @@
       background: var(--orange);
     }
 
-    .about-img-placeholder svg { width: 52px; height: 52px; opacity: 0.2; }
+    .about-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* ── WORK GALLERY ──────────────────────────────── */
+    #work {
+      padding: 88px 0;
+      background: var(--bg3);
+      border-top: 1px solid var(--border);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .work-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 3/4;
+    }
+
+    .work-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .work-card:hover img { transform: scale(1.04); }
+
+    @media (max-width: 768px) {
+      .work-grid { grid-template-columns: 1fr; }
+    }
 
     .about-body {
       font-size: 0.95rem;
@@ -689,7 +720,7 @@
 
     @media (max-width: 768px) {
       .about-inner { grid-template-columns: 1fr; gap: 40px; }
-      .about-img-placeholder { display: none; }
+      .about-photo-wrap { display: none; }
     }
 
     /* ── CONTACT ───────────────────────────────────── */
@@ -1394,16 +1425,33 @@
     </div>
   </section>
 
+  <!-- OUR WORK -->
+  <section id="work">
+    <div class="container">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">Real Jobs,<br/>Real Results</h2>
+      <p class="section-sub">Water heater installations from recent Toftoy Plumbing jobs in Fredericksburg — clean work, done right.</p>
+
+      <div class="work-grid">
+        <div class="work-card">
+          <img src="images/work-water-heater-1.jpg" alt="Water heater installation with copper piping and expansion tank" />
+        </div>
+        <div class="work-card">
+          <img src="images/work-water-heater-2.jpg" alt="Full water heater and expansion tank installation in basement" />
+        </div>
+        <div class="work-card">
+          <img src="images/work-water-heater-3.jpg" alt="Water heater replacement in utility closet" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT -->
   <section id="about">
     <div class="container about-inner">
 
-      <div class="about-img-placeholder">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.029 10 8 10c-2.029 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-        </svg>
-        Add portrait of York here
-        <small style="color:var(--dim);">Headshot or candid job site photo — ~400×530px</small>
+      <div class="about-photo-wrap">
+        <img src="images/york-portrait.jpg" alt="York Toftoy — Licensed Master Plumber, Fredericksburg VA" class="about-photo" />
       </div>
 
       <div class="about-content">
